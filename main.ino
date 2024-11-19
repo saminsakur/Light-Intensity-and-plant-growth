@@ -1,5 +1,3 @@
-// https://www.livelyroot.com/blogs/plant-care/snake-plant-light-requirements
-
 #include <RtcDS1302.h>
 #include <ThreeWire.h>
 #include <BH1750.h>
@@ -7,13 +5,13 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
-// DS1302 CLK/SCLK --> 5
-// DS1302 DAT/IO --> 4
-// DS1302 RST/CE --> 2
+// DS1302 CLK/SCLK --> 4
+// DS1302 DAT/IO --> 3
+// DS1302 RST/CE --> 5
 
 BH1750 lightMeter;
 LiquidCrystal_I2C lcd(0x27, 16, 2);
-ThreeWire samwire (4,5,2); // IO,SCL,CE
+ThreeWire samwire (3,4,5); // IO,SCL,CE
 RtcDS1302<ThreeWire> rtc(samwire);
 
 int r1 = 6;
